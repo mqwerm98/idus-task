@@ -3,10 +3,12 @@ package com.idus.demo.dto.response.inner;
 import com.idus.demo.entity.Orders;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
 @Data
+@NoArgsConstructor
 public class ResOrderDto {
 
     @ApiModelProperty(value = "주문번호", required = true)

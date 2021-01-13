@@ -4,10 +4,12 @@ import com.idus.demo.entity.Gender;
 import com.idus.demo.entity.Member;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
 @Data
+@NoArgsConstructor
 public class ResMemberDto {
 
     @ApiModelProperty(value = "이름", required = true)

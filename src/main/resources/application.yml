@@ -1,5 +1,7 @@
-
 spring:
+  application:
+    name: IDUS Task API
+
   datasource:
     url: jdbc:mysql://localhost:3306/idus?useSSL=false&characterEncoding=UTF-8&serverTimezone=UTC
     username: idus
@@ -17,6 +19,7 @@ spring:
 
   jwt:
     secret: idus-key
+
 logging:
   level:
     org.hibernate.SQL: debug

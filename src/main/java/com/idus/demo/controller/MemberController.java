@@ -58,8 +58,6 @@ public class MemberController {
     @ApiOperation(value = "단일 회원 상세 정보 조회")
     @GetMapping("/member")
     public Response<ResMemberDetailDto> getMemberDetail(@AuthenticationPrincipal Member member) {
-
-
         ResMemberDetailDto dto = new ResMemberDetailDto(member);
         return Response.OK(dto);
     }
@@ -81,9 +79,9 @@ public class MemberController {
         List<Member> list = new ArrayList<>();
 
         if (option.equals("name")) {
-            list = memberRepository.findByName(value, pr.of()).getContent();
+            list = memberRepository.findAllByNameContains(value, pr.of()).getContent();
         } else if (option.equals("email")) {
-            list = memberRepository.findByEmail(value, pr.of()).getContent();
+            list = memberRepository.findAllByEmailContains(value, pr.of()).getContent();
         } else {
             list = memberRepository.findAll(pr.of()).getContent();
         }
@@ -91,9 +89,7 @@ public class MemberController {
         ResMemberListDto dto = new ResMemberListDto();
         for (Member m : list) {
             ResOrderDto lastOrder = orderService.getLastOrderByMember(m);
-            if (lastOrder != null) {
-                dto.getMemberList().add(new ResMemberDto(m, lastOrder));
-            }
+            dto.getMemberList().add(new ResMemberDto(m, lastOrder));
         }
         return Response.OK(dto);
     }

@@ -2,12 +2,16 @@ package com.idus.demo.dto.request;
 
 import com.idus.demo.entity.Gender;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.*;
 
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class ReqSignUpDto {
 
     @ApiModelProperty(value = "이름", required = true)

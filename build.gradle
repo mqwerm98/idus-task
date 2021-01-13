@@ -36,6 +36,9 @@ dependencies {
 
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-validation', version: '2.3.7.RELEASE'
 
+    compile group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310', version: '2.7.4'
+    compile group: 'org.modelmapper', name: 'modelmapper', version: '2.1.1'
+
 }
 
 test {
